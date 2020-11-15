@@ -63,7 +63,7 @@ https://vast-mountain-48362.herokuapp.com/
 
 **Registration API**
 
-https://vast-mountain-48362.herokuapp.com/api/auth/register/
+https://vast-mountain-48362.herokuapp.com/api/auth/register
 
 **Login API:** 
 
