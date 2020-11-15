@@ -1,0 +1,87 @@
+body {
+background: white url("images/background.png");
+}
+
+ul.errorlist {
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    list-style: none;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+.glyphicon-star {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-star.active {
+    color: #FDB230;
+}
+
+.custom_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+    background-color: #ffffff;
+}
+
+.custom_title {
+  color: grey;
+  font-size: 15px;
+}
+
+custom_button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+custom_a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+custom_button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.heading {
+  font-size: 17px;
+  margin-right: 25px;
+  color: #6f42c1;
+}
+
+.checked {
+  color: orange;
+}
+
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #cd1b04;    }
+    49%{    color: #fffdfd; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #fffdfd;    }
+}
+

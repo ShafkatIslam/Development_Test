@@ -1,0 +1,76 @@
+{% extends 'Developments_Tests/base.html' %}
+
+{% block body %}
+    <div class="container">
+
+<div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container">
+                                <div class="list-group">
+                                <h2 class="list-group-item-heading" style="font-size: 25px;color: #bd2600;font-family: Algerian; font-style: initial"><b><u>Post:</u></b> </h2>
+                                <br>
+                                    <a href=""  class="list-group-item" style="color: #1D62F0">
+                                            <table>
+
+                                               <tr>
+                                                  <td><h4 class="list-group-item-heading" style="font-size: 20px;color: #00bd14;font-family: Algerian; font-style: initial">ID No: </h4></td>
+                                                  <td><h4 class="list-group-item-heading" style="font-size: 20px;color: #ff0f2f;font-family: 'Berlin Sans FB'">&nbsp{{ info_list1.id }}</h4></td>
+                                               </tr>
+                                                <tr>
+                                                  <td><h5 class="list-group-item-text" style="font-size: 20px;color: #5c1dbd;font-family: Algerian; font-style: initial">Title: </h5></td>
+                                                  <td><h5 class="list-group-item-text" style="font-size: 20px;color: #dc9d36;font-family: 'Berlin Sans FB'">&nbsp&nbsp&nbsp{{ info_list1.title }}</h5></td>
+                                               </tr>
+                                                <tr>
+                                                  <td><h6 class="list-group-item-text" style="font-size: 20px;color: #bd0080;font-family: Algerian; font-style: initial">Body: </h6></td>
+                                                  <td><h6 class="list-group-item-text" style="font-size: 20px;color: #0c5460;font-family: 'Berlin Sans FB'">&nbsp&nbsp&nbsp{{ info_list1.body }}</h6></td>
+                                               </tr>
+                                            </table>
+                                                <br>
+                                </a>
+                                                <hr>
+                                </div>
+                             </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+<div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container">
+                                <div class="list-group">
+                                <h2 class="list-group-item-heading" style="font-size: 25px;color: #aabd0e;font-family: Algerian; font-style: initial"><b><u>All Comments:</u></b> </h2>
+                                <br>
+                                    {% for info in info_list2 %}
+                                     <a href=""  class="list-group-item" style="color: #1D62F0">
+                                            <table>
+
+                                               <tr>
+                                                  <td><h4 class="list-group-item-heading" style="font-size: 20px;color: #00bd14;font-family: Algerian; font-style: initial">Name: </h4></td>
+                                                  <td><h4 class="list-group-item-heading" style="font-size: 20px;color: #ff0f2f;font-family: 'Berlin Sans FB'">&nbsp{{ info.name }}</h4></td>
+                                               </tr>
+                                                <tr>
+                                                  <td><h5 class="list-group-item-text" style="font-size: 20px;color: #5c1dbd;font-family: Algerian; font-style: initial">Email: </h5></td>
+                                                  <td><h5 class="list-group-item-text" style="font-size: 20px;color: #dc9d36;font-family: 'Berlin Sans FB'">&nbsp&nbsp&nbsp{{ info.email }}</h5></td>
+                                               </tr>
+                                                <tr>
+                                                  <td><h6 class="list-group-item-text" style="font-size: 20px;color: #bd0080;font-family: Algerian; font-style: initial">Body: </h6></td>
+                                                  <td><h6 class="list-group-item-text" style="font-size: 20px;color: #0c5460;font-family: 'Berlin Sans FB'">&nbsp&nbsp&nbsp{{ info.body }}</h6></td>
+                                               </tr>
+                                            </table>
+                                                <br>
+                                     </a>
+                                                <hr>
+                                    {% endfor %}
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+{% endblock %}

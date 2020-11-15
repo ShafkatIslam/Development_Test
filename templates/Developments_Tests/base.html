@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Development Test{% endblock %}</title>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{%  static 'Developments_Test/favicon.ico' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'Developments_Test/style.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{% static 'Developments_Test/js/image.js' %}"></script>
+    <script>
+        $('#bs').materialSelect({
+        BSsearchIn: true
+        });
+    </script>
+
+
+    <script src="{% static 'Developments_Test/js/main.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'Developments_Test:home' %}">Development Test</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+
+            <ul class="nav navbar-nav">
+                <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'Developments_Test:home' %}"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>&nbsp; Home</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class=""><a href="{% url 'Developments_Test:other-post' %}"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>&nbsp; Other Post</a></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a style="font-size: 20px; font-family: 'Book Antiqua'" href="">
+                        {{ user.username }}
+                    </a>
+                </li>
+
+                <form class="navbar-form navbar-right" role="form" method="post" action="{% url 'Developments_Test:logout_user' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </button>
+
+                </div>
+            </form>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

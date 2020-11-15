@@ -1,0 +1,100 @@
+{% extends 'Developments_Tests/base_visitor.html' %}
+{% block title %}Development Test{% endblock %}
+{% block login_active %}active{% endblock %}
+
+{% block body %}
+<div class="container">
+{% if user.is_authenticated %}
+    <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-6" style="background-color:white;margin-top:3%">
+            <div class="">
+            <br>
+                <div class="">
+                <br>
+                    <h5 style="text-align: center;color: #ff914b">Hello {{ user.username }}. <br>You are still logged-in</h5>
+                <br>
+                    <form class="">
+                        <div class="form-group">
+                            <div class="col-auto">
+                                {% if users %}
+                                    <a class="btn btn-success btn-lg btn-block text-center" role="button" href="{% url 'Developments_Test:home' %}"> Continue to here </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </form>
+                <form role="form" method="post" action="{% url 'Developments_Test:logout_user' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="col-auto">
+                    <button type="submit" class="btn-warning btn-lg btn-block">
+                        &nbsp; Logout
+                    </button>
+
+                </div>
+                </form>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+{% else %}
+     <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-6" style="background-color:white;margin-top:3%">
+            <div class="">
+            <br>
+                <div class="">
+                <br>
+                    <h3 class="text-center text-primary">Login</h3>
+                <br>
+                <div>
+                     {% for message in messages %}
+                        <h5 class="text-center text-success">
+                            {{ message }}
+                        </h5>
+                    {% endfor %}
+                </div>
+                    {% if error_message %}
+                        <p class="text-danger text-center"><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="" role="form" action="{% url 'Developments_Test:login_user'%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="container" for="id_username" style="color: green">
+                                Email:
+                            </label>
+                            <div class="col-sm-10">
+                                <input id="id_username" class="form-control" maxlength="30" name="username" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="container" for="id_password" style="color: green">
+                                Password:
+                            </label>
+                            <div class="col-sm-10">
+                                <input id="id_password" class="form-control" maxlength="30" name="password" type="password">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               <div class="text-center py-3 bg-secondary text-white">
+                    Forget your password? <a class="text-danger" href="{% url 'password_reset' %}">Click here</a>
+                </div>
+                <br>
+                <div class="text-center py-3 bg-light">
+                    Don't have an account? <a href="{% url 'Developments_Test:register' %}">Click here</a> to register.
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+{% endif %}
+</div>
+
+{% endblock %}
+
