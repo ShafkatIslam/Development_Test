@@ -2,39 +2,39 @@
 
 _all commands for this project:_
 
-**install django in virtual environment
+**install django in virtual environment**
 
 `pipenv install django` 
 
-**activate virtual environment 
+**activate virtual environment**
 `pipenv shell `
 
 
-**create django project
+**create django project**
 `django-admin startproject Development_Test_Project`
 
-**create new application for store,retrieve,update and delete data
+**create new application for store,retrieve,update and delete data**
 `python manage.py startapp Developments_Test`
 
-**to upload the application to a web server in production level
+**to upload the application to a web server in production level**
 `pipenv install gunicorn`
 
 
-**to migrate the model
+**to migrate the model**
 `python manage.py makemigrations`
 
 `python manage.py migrate`
 
-**to create superuser (admin)
+**to create superuser (admin)**
 `python manage.py createsuperuser`
 
-**For PostgreSQL and pgAdmin4
+**For PostgreSQL and pgAdmin4**
 `pipenv install psycopg2`
 
-**For static file in server (image,css,javascript,bootstrap etc.)
+**For static file in server (image,css,javascript,bootstrap etc.)**
 `pipenv install whitenoise`
 
-**Upload project to Heroku Server
+**Upload project to Heroku Server**
 `heroku login`
 
 `heroku create`
@@ -59,7 +59,7 @@ https://vast-mountain-48362.herokuapp.com/
 
 **API create:** 
 
-**In the authentication apps(folder) in url section we find the following API:
+**In the authentication apps(folder) in url section we find the following API:**
 
 **Registration API**
 
